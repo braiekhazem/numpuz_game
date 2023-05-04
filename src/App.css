@@ -1,0 +1,234 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image:  url("https://cdn6.aptoide.com/imgs/a/3/a/a3a5b362b91d1028d0316678bb574c34_fgraphic.jpg");
+  background-size: cover;
+  background-blend-mode: saturation;
+  position: relative;
+}
+.App::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.514);
+  z-index: 0;
+}
+
+.opt {
+  width: 200px;
+  background-color: rgb(220 139 0);
+  padding: 10px;
+  margin-bottom: 12px;
+  color: white;
+  font-size: 21px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 0px 9px -2px rgb(255 255 255 / 44%);
+  transition: all .2s;
+}
+
+.opt:hover {
+  background-color: rgba(21, 21, 93, 0.959);
+}
+
+.cell {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.start{
+  position: relative;
+  z-index: 1;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  background-color: #5d2f1f;
+  padding: 8px;
+  border-radius: 5px;
+  z-index: 1;
+  position: relative;
+  box-shadow: 1px -1px 19px -2px rgba(255,255,255,0.65);
+}
+
+.return {
+  font-size: 40px;
+  background-color: red;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  cursor: pointer;
+}
+
+.popup {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.413);
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.child {
+  background-color: white;
+  width: 50%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 8px;
+  z-index: 1000;
+  padding: 20px 0;
+  z-index: 1000;
+}
+
+.msg {
+  color: red;
+  font-size: 60px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.reset {
+  padding: 10px 25px;
+  background-color: orangered;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.gamesetting {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.gamesetting span {
+  font-size: 27px;
+  font-weight: bold;
+  color: blueviolet;
+}
+
+.gamesetting .mov{
+  text-align: center;
+  color: white;
+}
+
+.bar {
+  width: 200px;
+  height: 8px;
+  position: relative;
+  background-color: #5d2f1f;
+  border-radius: 30px;
+}
+
+.bar div {
+  background-color: rgb(201, 161, 92);
+  position: absolute;
+  height: 100%;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.board_container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.496);
+  height: 100vh;
+  width: 40%;
+  min-width: fit-content;
+}
+
+.board_container-back{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  color: black;
+  width: 44px;
+  height: 44px;
+  background: #E9F1F2;
+  border-radius: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+@media (max-width: 480px){
+  .start{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .board_container{
+    width: 100%;
+  }
+  .opt{
+    width: 80%;
+  }
+  .child{
+    width: 80%;
+  }
+}
+
+@media (max-width: 350px){
+  .cell{
+    font-size: 14px;
+  }
+  
+
+
+}
+
+@media (max-width: 1000px){
+
+  .board_container{
+    width: 100%;
+  }
+
+}
