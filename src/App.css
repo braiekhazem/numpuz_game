@@ -38,14 +38,14 @@
 }
 
 .cell {
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 17px;
+  font-size: 25px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -60,7 +60,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 7px;
   background-color: #5d2f1f;
   padding: 8px;
   border-radius: 5px;
@@ -216,11 +216,13 @@
   }
 }
 
-@media (max-width: 350px){
+@media (max-width: 400px){
   .cell{
     font-size: 14px;
   }
-  
+  .border{
+    gap:5px
+  }
 
 
 }

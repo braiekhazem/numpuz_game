@@ -49,7 +49,7 @@ export const Board = ({ CurrentOption }) => {
             maxWidth: `${
               windowWidth < 480 && Board?.length > 5
                 ? "90%"
-                : `calc(${Board?.length} * 35px + ${Board?.length - 1} * 5px)`
+                : `calc(${Board?.length} * 50px + ${Board?.length - 1} * 7px)`
             } `,
           }}
         >
