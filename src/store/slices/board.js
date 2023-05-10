@@ -71,6 +71,15 @@ const GameBoard = createSlice({
     setLevel(state) {
       state.level = state.level + 1;
     },
+    setNextLevel(state) {
+      state.win = false;
+      state.movements = 0;
+    },
+    restartLevel(state) {
+      state.win = false;
+      state.movements = 0;
+    },
+
     resetGame(state) {
       state.Board = null;
       state.win = false;

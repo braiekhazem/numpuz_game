@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import restardIcon from "./../assets/icons/restard.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { BoardActions } from "../store/slices/board";
 import { CheckWin } from "../utils/CheckWin";
@@ -18,6 +19,12 @@ export const Board = ({ CurrentOption }) => {
     dispatch(GameOptions.resetGame());
   };
 
+  const restartGame = () => {
+    dispatch(BoardActions.generateBoard(CurrentOption));
+    dispatch(GameOptions.setOption(CurrentOption));
+    dispatch(BoardActions.restartLevel());
+  };
+
   useEffect(() => {
     if (percentage >= 0)
       setTimeout(() => {
@@ -26,22 +33,25 @@ export const Board = ({ CurrentOption }) => {
   }, [time]);
 
   useEffect(() => {
-    if (!Board) {
-      dispatch(BoardActions.generateBoard(CurrentOption));
-      return;
-    }
-    if (CheckWin(Board)) {
+    dispatch(BoardActions.generateBoard(CurrentOption));
+  }, [CurrentOption, dispatch]);
+
+  useEffect(() => {
+    if (Board && CheckWin(Board)) {
       dispatch(BoardActions.setWin(true));
     }
-  }, [Board, CurrentOption, dispatch]);
-  const windowWidth = window.innerWidth;
+  }, [Board]);
 
+  const windowWidth = window.innerWidth;
   return (
     <>
-      {win && <GameOver msg="You Win" />}
+      {win && <GameOver msg={`Congratulations! You win`} />}
       <div className="board_container">
         <div className="board_container-back" onClick={resetGameHandler}>
           <ArrowLeftOutlined />
+        </div>
+        <div className="board_container-back restard" onClick={restartGame}>
+          <img src={restardIcon} />
         </div>
         <div
           className="board"

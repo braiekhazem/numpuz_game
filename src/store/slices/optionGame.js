@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-  Options: ["x3", "x4", "x5", "x7", "x9"],
+  Options: ["x3", "x5", "x6", "x7", "x8"],
   CurrentOption: "",
 };
 const GameOpt = createSlice({
@@ -12,6 +12,12 @@ const GameOpt = createSlice({
     },
     resetGame(state) {
       state.CurrentOption = "";
+    },
+    setNextOption(state) {
+      const nextOptionIndex =
+        +state.Options?.findIndex((opt) => opt === state?.CurrentOption) + 1;
+      const nextOption = state.Options[nextOptionIndex] || state.Options[0];
+      state.CurrentOption = nextOption;
     },
   },
 });
