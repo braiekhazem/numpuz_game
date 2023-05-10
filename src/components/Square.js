@@ -24,8 +24,10 @@ export const Square = ({ cell, pos, Board }) => {
       : {};
   return (
     <div
-      className="cell"
-      style={{ backgroundColor: cell ? "#C9A15C" : "#5D2F1F", ...style }}
+      className={`cell ${!cell ? "empty" : ""}`}
+      style={{
+        ...style,
+      }}
       onClick={switchPos}
     >
       {cell}

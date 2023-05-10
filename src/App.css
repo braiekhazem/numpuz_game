@@ -48,6 +48,14 @@
   font-size: 25px;
   font-weight: bold;
   cursor: pointer;
+  background-image: url(./assets/icons/Screen\ Shot\ 2023-05-10\ at\ 5.20.22\ PM.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.empty{
+  background-color: #5d2f1f ;
+  background-image: none;
 }
 
 .start{

@@ -47,4 +47,4 @@
 	<li>Submit a pull request with a clear and detailed description of your changes.</li>
 </ol>
 
-<h2> URL : https://numpuz-game.web.app </h2>
+<h2> Live Demo : https://numpuz-game.web.app </h2>
